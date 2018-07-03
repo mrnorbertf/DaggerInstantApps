@@ -41,7 +41,7 @@ ext {
     supportMediaRouter = "com.android.support:mediarouter-v7:$appCompatVersion"
 
     // dagger
-    daggerVersion = "2.14.1"
+    daggerVersion = "2.16"
 
     dagger = "com.google.dagger:dagger:$daggerVersion"
     daggerAndroid = "com.google.dagger:dagger-android:$daggerVersion"

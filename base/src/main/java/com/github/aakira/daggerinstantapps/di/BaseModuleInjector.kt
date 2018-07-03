@@ -53,6 +53,10 @@ abstract class BaseModuleInjector : HasActivityInjector,
             is ContentProvider -> contentProviderInjector.inject(dependerContext)
         }
     }
+    fun inject(dependerContext: SupportFragment) {
+        injectIfNecessary(App.appComponent(dependerContext.context!!))
+        fragmentSupportInject.inject(dependerContext)
+    }
 
     /**
      * Inject a sub component

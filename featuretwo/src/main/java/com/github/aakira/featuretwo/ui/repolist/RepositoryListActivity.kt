@@ -1,6 +1,7 @@
 package com.github.aakira.featuretwo.ui.repolist
 
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -28,6 +29,8 @@ class RepositoryListActivity : AbstractActivity() {
         recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
         recyclerView.layoutManager = LinearLayoutManager(this)
 
+//        pushFragment(MyFragment.newInstance(1))
+
         repoListStore.githubRepoList()
                 .observeOn(AndroidSchedulers.mainThread())
                 .compose(bindToLifecycle())
@@ -38,5 +41,12 @@ class RepositoryListActivity : AbstractActivity() {
                 }
 
         repoListAction.getRepoList("aakira")
+    }
+
+    fun pushFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, fragment)
+                .addToBackStack(null)
+                .commit()
     }
 }

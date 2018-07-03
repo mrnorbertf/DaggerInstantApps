@@ -1,5 +1,6 @@
 package com.github.aakira.daggerinstantapps
 
+import android.content.Context
 import com.github.aakira.daggerinstantapps.data.DebugDataModule
 import com.github.aakira.daggerinstantapps.di.BaseAppModules
 import dagger.Module
